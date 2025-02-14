@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practo Clone - Search</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="search-container">
+        <h2>Find Doctors, Specializations, or Practices</h2>
+        <div class="search-box">
+            <input type="text" id="search-bar" placeholder="Search for doctors, specializations, or clinics...">
+            <button id="search-button">Search</button>
+        </div>
+    </div>
+    
+    <div id="search-results" class="results-container"></div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/search.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("search-button").addEventListener("click", performSearch);
+            document.getElementById("search-bar").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    performSearch();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
